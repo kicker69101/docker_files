@@ -1,7 +1,10 @@
 # Setup
-This doc assumes you have some basic knowledge of sabnzbd, sonarr, radarr, and/or google
+This doc assumes you have some basic knowledge of sabnzbd, sonarr, radarr, and/or google. You also have a working docker server.
+
+## Install
 
 Here are the steps to setup
+
 1. Create a local user that will link all these together
 2. Create a place to store your media and configs
   * In this file I use /opt/data/tv for tv shows
@@ -17,3 +20,13 @@ Here are the steps to setup
   * Since this containers will be on one network, you can just refer sabnzbd as the hostname. Docker will handle the hosts file for this
 6. Configure your indexer for both sonarr and radarr.
 7. Enjoy the downloads fly.
+
+## Update
+
+Run these commands on your host
+
+  * docker-compose down
+  * docker pull linuxserver/sabnzbd
+  * docker pull linuxserver/sonarr
+  * docker pull linuxserver/radarr
+  * docker-compose up -d
