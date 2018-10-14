@@ -1,0 +1,46 @@
+version: '3.1'
+
+services:
+        sabnzbd:
+                image: linuxserver/sabnzbd
+                restart: always
+                ports:
+                        - 9090:9090
+                        - 8080:8080
+                environment:
+                        - PGID=1000
+                        - PUID=1000
+                volumes:
+                        - /opt/sabnzbd/config:/config
+                        - /opt/sabnzbd/downloads:/downloads
+                        - /opt/sabnzbd/incomplete-downloads:/incomplete-downloads
+
+        sonarr:
+                image: linuxserver/sonarr
+                restart: always
+                ports:
+                        - 8989:8989
+                environment:
+                        - PGID=1000
+                        - PUID=1000
+                        - TZ=America/Denver
+                volumes:
+                        - /etc/localtime:/etc/localtime:ro
+                        - /opt/sonarr/config:/config
+                        - /opt/data/tv:/tv
+                        - /opt/sabnzbd/downloads:/downloads
+
+        radarr:
+                image: linuxserver/radarr
+                restart: always
+                ports:
+                        - 7878:7878
+                environment:
+                        - PGID=1000
+                        - PUID=1000
+                        - TZ=America/Denver
+                volumes:
+                        - /etc/localtime:/etc/localtime:ro
+                        - /opt/radar/config:/config
+                        - /opt/data/movies:/movies
+                        - /opt/sabnzbd/downloads:/downloads
