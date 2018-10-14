@@ -24,8 +24,8 @@ Here are the steps to setup
 ## Update
 
 Run these commands on your host:
-    * docker-compose down
-    * docker pull linuxserver/sabnzbd
-    * docker pull linuxserver/sonarr
-    * docker pull linuxserver/radarr
-    * docker-compose up -d
+  * docker-compose down
+  * docker pull linuxserver/sabnzbd
+  * docker pull linuxserver/sonarr
+  * docker pull linuxserver/radarr
+  * docker-compose up -d
