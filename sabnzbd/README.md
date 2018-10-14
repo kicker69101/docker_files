@@ -7,7 +7,7 @@ Here are the steps to setup
 
 1. Create a local user that will link all these together
 2. Create a place to store your media and configs
-  * In this file I use /opt/data/tv for tv shows
+    * In this file I use /opt/data/tv for tv shows
   * /opt/data/movies for movies
   * I allow store all the configs in /opt for each container, with /opt/downloads being centerized for all three containers
   * you might want to adjust this based on your setup.
